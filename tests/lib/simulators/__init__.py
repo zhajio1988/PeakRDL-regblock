@@ -3,6 +3,7 @@ import functools
 
 from .base import Simulator
 from .questa import Questa
+from .vcs import vcs
 from .xilinx import XilinxXSIM
 from .stub import StubSimulator
 
@@ -11,6 +12,7 @@ ALL_SIMULATORS = [
     Questa,
     XilinxXSIM,
     StubSimulator,
+    vcs,
 ]
 
 @functools.lru_cache()
@@ -24,6 +26,7 @@ def get_simulator_cls(name: str) -> Optional[Type[Simulator]]:
             if sim_cls is StubSimulator:
                 # Never offer the stub as an automatic option
                 continue
+            print("debug point ", sim_cls.name)
             if sim_cls.is_installed():
                 return sim_cls
         raise ValueError("Could not find any installed simulators")
