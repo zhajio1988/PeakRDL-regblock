@@ -13,5 +13,5 @@ See the [PeakRDL-regblock Documentation](http://peakrdl-regblock.readthedocs.io)
 
 ## Jude Add
 Add vcs simulator support in tests
-you can run a test by blow command
-`pytest --workers auto --cov=peakrdl_regblock --synth-tool skip test_hw_access`
+you can run a test by blow command  
+`pytest --workers auto --cov=peakrdl_regblock --synth-tool skip test_hw_access `
